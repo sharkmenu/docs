@@ -7,12 +7,12 @@
   },
   "favicon": "https://cdn.discordapp.com/attachments/993936704488624298/1274583778261733386/shark_s_fundo.png?ex=66c2c825&is=66c176a5&hm=f5b30eac7545fe308152548cad322a242f679a745a7361cf6d13c079a2d2548d&",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#0077ff",
+    "light": "#0077ff",
+    "dark": "#0077ff",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#0077ff",
+      "to": "#0077ff"
     }
   },
   "topbarLinks": [
