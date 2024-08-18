@@ -9,24 +9,41 @@ icon: 'code'
 API usada para fazer inject em um resource.
 ```lua HelloWorld.lua
 SharkAPI.Inject('resource', [[
-  _G.print('Hello World!');
+  _G.print('Hello World');
 ]])
 ```
 
 ### SharkAPI GetName
 API que retorna o nome do usuário.
-```lua HelloWorld.lua
+```lua GetName.lua
 SharkAPI.GetUsername();
 ```
 
 ### SharkAPI RequestHTTP
 API que realiza uma requisição HTTP para a URL especificada
-```lua HelloWorld.lua
-SharkAPI.RequestHTTP("url")
+```lua RequestHTTP.lua
+SharkAPI.RequestHTTP("url");
 ```
 
 ### SharkAPI Statebags
-API que realiza uma requisição HTTP para a URL especificada
-```lua HelloWorld.lua
-SharkAPI.
+API que retorna uma lista de statebag que contém "state1", "state2".
+```lua Statebags.lua
+SharkAPI.GetStatebags();
+```
+
+### SharkAPI SetClipboard
+API que seta o valor no Clipboard.
+```lua SetClipboard.lua
+SharkAPI.SetClipboard("value");
+```
+### SharkAPI RequestRagdoll
+API que força um ragdoll no jogador escolhido.
+```lua RequestRagdoll.lua
+SharkAPI.RequestRagdoll(GetPlayerPed(...));
+```
+
+### SharkAPI RequestRagdoll
+Uma API que retorna um valor booleano indicando se uma determinada tecla foi pressionada ou não. O parâmetro de entrada é o vkCode, que representa os Virtual Key Codes (códigos de tecla virtual).
+```lua IsKeyJustPressed.lua
+SharkAPI.IsKeyJustPressed(0x0);
 ```
