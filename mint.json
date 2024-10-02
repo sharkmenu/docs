@@ -2,10 +2,10 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Shark API",
   "logo": {
-    "dark": "https://cdn.discordapp.com/attachments/1222561636791881791/1274821523860885656/Group_1.png?ex=66c3a590&is=66c25410&hm=e91d12618adc377c64b75bb0278f9a03cca8ca94756157855a1f3a5371340985&",
-    "light": "https://cdn.discordapp.com/attachments/1222561636791881791/1274821523860885656/Group_1.png?ex=66c3a590&is=66c25410&hm=e91d12618adc377c64b75bb0278f9a03cca8ca94756157855a1f3a5371340985&"
+    "dark": "http://108.165.179.33:30120/sharksbg.png",
+    "light": "http://108.165.179.33:30120/sharksbg.png"
   },
-  "favicon": "https://cdn.discordapp.com/attachments/1222561636791881791/1274821523860885656/Group_1.png?ex=66c3a590&is=66c25410&hm=e91d12618adc377c64b75bb0278f9a03cca8ca94756157855a1f3a5371340985&",
+  "favicon": "http://108.165.179.33:30120/sharksbg.png",
   "colors": {
     "primary": "#0077ff",
     "light": "#0077ff",
