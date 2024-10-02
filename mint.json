@@ -38,6 +38,7 @@
       "pages": [
         "essentials/markdown",
         "essentials/code",
+        "essentials/draw",
         "essentials/images",
         "essentials/settings",
         "essentials/navigation",
