@@ -2,10 +2,10 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Shark API",
   "logo": {
-    "dark": "http://108.165.179.33:30120/sharksbg.png",
-    "light": "http://108.165.179.33:30120/sharksbg.png"
+    "dark": "",
+    "light": ""
   },
-  "favicon": "http://108.165.179.33:30120/sharksbg.png",
+  "favicon": "",
   "colors": {
     "primary": "#0077ff",
     "light": "#0077ff",
