@@ -1,49 +1,170 @@
 ---
-title: Shark API's
-description: 'Esta documentação é destinada a desenvolvedores e detalha as APIs disponíveis no Executor do Shark.'
-icon: 'code'
----
 
+title: Shark API's  
+description: 'Esta documentação é destinada a desenvolvedores e detalha as APIs disponíveis no Executor do Shark.'  
+icon: 'code'  
+
+---
 
 ### SharkAPI Inject
 API usada para fazer inject em um resource.
+
 ```lua HelloWorld.lua
 SharkAPI.Inject('resource', [[
   _G.print('Hello World');
 ]])
 ```
 
+#### Parâmetros:
+
+| Parâmetro | Descrição                                    |
+|-----------|----------------------------------------------|
+| resource  | Nome do resource onde o código será injetado|
+
+#### Retorno:
+- **Sucesso:** `nil`
+- **Erro:** Mensagem de erro em caso de falha.
+
+---
+
 ### SharkAPI GetName
 API que retorna o nome do usuário.
+
 ```lua GetName.lua
-SharkAPI.GetUsername();
+local username = SharkAPI.GetUsername();
 ```
 
+#### Retorno:
+- **string:** Nome do usuário.
+
+---
+
 ### SharkAPI RequestHTTP
-API que realiza uma requisição HTTP para a URL especificada
+API que realiza uma requisição HTTP para a URL especificada.
+
 ```lua RequestHTTP.lua
 SharkAPI.RequestHTTP("url");
 ```
 
+#### Parâmetros:
+
+| Parâmetro | Descrição                                   |
+|-----------|---------------------------------------------|
+| url       | URL para a qual a requisição será feita.   |
+
+#### Retorno:
+- **table:** Resposta da requisição.
+
+---
+
 ### SharkAPI Statebags
 API que retorna uma lista de statebag que contém "state1", "state2".
+
 ```lua Statebags.lua
-SharkAPI.GetStatebags();
+local statebags = SharkAPI.GetStatebags();
 ```
+
+#### Retorno:
+- **table:** Lista de statebags.
+
+---
 
 ### SharkAPI SetClipboard
 API que seta o valor no Clipboard.
+
 ```lua SetClipboard.lua
 SharkAPI.SetClipboard("value");
 ```
+
+#### Parâmetros:
+
+| Parâmetro | Descrição                                  |
+|-----------|--------------------------------------------|
+| value     | Valor a ser copiado para o clipboard.     |
+
+#### Retorno:
+- **Sucesso:** `nil`
+- **Erro:** Mensagem de erro em caso de falha.
+
+---
+
 ### SharkAPI RequestRagdoll
 API que força um ragdoll no jogador escolhido.
+
 ```lua RequestRagdoll.lua
 SharkAPI.RequestRagdoll(GetPlayerPed(...));
 ```
 
+#### Parâmetros:
+
+| Parâmetro | Descrição                                  |
+|-----------|--------------------------------------------|
+| player    | ID do jogador que receberá o ragdoll.     |
+
+#### Retorno:
+- **Sucesso:** `nil`
+- **Erro:** Mensagem de erro em caso de falha.
+
+---
+
 ### SharkAPI IsKeyJustPressed
-Uma API que retorna um valor booleano indicando se uma determinada tecla foi pressionada ou não. O parâmetro de entrada é o vkCode, que representa os Virtual Key Codes (códigos de tecla virtual).
+API que retorna um valor booleano indicando se uma tecla foi pressionada.
+
 ```lua IsKeyJustPressed.lua
-SharkAPI.IsKeyJustPressed(0x0);
+local isPressed = SharkAPI.IsKeyJustPressed(0x0);
 ```
+
+#### Parâmetros:
+
+| Parâmetro | Descrição                                  |
+|-----------|--------------------------------------------|
+| vkCode    | Código da tecla virtual.                   |
+
+#### Códigos de Tecla Virtual:
+| Código (Hex) | Tecla                           |
+|--------------|---------------------------------|
+| 0x08        | Backspace                       |
+| 0x09        | Tab                             |
+| 0x0D        | Enter                           |
+| 0x1B        | Esc                             |
+| 0x20        | Espaço                          |
+| 0x30        | 0 (número)                     |
+| 0x31        | 1 (número)                     |
+| 0x32        | 2 (número)                     |
+| 0x33        | 3 (número)                     |
+| 0x34        | 4 (número)                     |
+| 0x35        | 5 (número)                     |
+| 0x36        | 6 (número)                     |
+| 0x37        | 7 (número)                     |
+| 0x38        | 8 (número)                     |
+| 0x39        | 9 (número)                     |
+| 0x41        | A                               |
+| 0x42        | B                               |
+| 0x43        | C                               |
+| 0x44        | D                               |
+| 0x45        | E                               |
+| 0x46        | F                               |
+| 0x47        | G                               |
+| 0x48        | H                               |
+| 0x49        | I                               |
+| 0x4A        | J                               |
+| 0x4B        | K                               |
+| 0x4C        | L                               |
+| 0x4D        | M                               |
+| 0x4E        | N                               |
+| 0x4F        | O                               |
+| 0x50        | P                               |
+| 0x51        | Q                               |
+| 0x52        | R                               |
+| 0x53        | S                               |
+| 0x54        | T                               |
+| 0x55        | U                               |
+| 0x56        | V                               |
+| 0x57        | W                               |
+| 0x58        | X                               |
+| 0x59        | Y                               |
+| 0x5A        | Z                               |
+
+#### Retorno:
+- **boolean:** `true` se a tecla foi pressionada, caso contrário `false`.
+
