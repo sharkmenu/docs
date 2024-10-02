@@ -2,10 +2,10 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Shark API",
   "logo": {
-    "dark": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpt.vecteezy.com%2Farte-vetorial%2F6413678-desenho-animado-de-tubarao-bravo&psig=AOvVaw2GyfRUF3CGNz_aDnoVpv4y&ust=1727998466734000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMDP0-vt8IgDFQAAAAAdAAAAABAE",
-    "light": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpt.vecteezy.com%2Farte-vetorial%2F6413678-desenho-animado-de-tubarao-bravo&psig=AOvVaw2GyfRUF3CGNz_aDnoVpv4y&ust=1727998466734000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMDP0-vt8IgDFQAAAAAdAAAAABAE"
+    "dark": "",
+    "light": ""
   },
-  "favicon": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpt.vecteezy.com%2Farte-vetorial%2F6413678-desenho-animado-de-tubarao-bravo&psig=AOvVaw2GyfRUF3CGNz_aDnoVpv4y&ust=1727998466734000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMDP0-vt8IgDFQAAAAAdAAAAABAE",
+  "favicon": "",
   "colors": {
     "primary": "#0077ff",
     "light": "#0077ff",
