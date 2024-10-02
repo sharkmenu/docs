@@ -1,49 +1,125 @@
 ---
-title: Shark API's Draw
-description: 'Esta documentação é destinada a desenvolvedores e detalha as APIs disponíveis no Executor do Shark.'
+title: Shark API's Drawing  
+description: 'Esta documentação detalha as APIs de desenho disponíveis no Executor do Shark.'  
 icon: 'draw-square'
 ---
 
 
-### SharkAPI Inject
-API usada para fazer inject em um resource.
-```lua HelloWorld.lua
-SharkAPI.Inject('resource', [[
-  _G.print('Hello World');
-]])
+### SharkAPI Drawing - DrawRect
+API que desenha um retângulo na tela.
+
+```lua DrawRect.lua
+SharkAPI.Drawing.DrawRect('rect_example', 100, 100, 150, 150, 255, 0, 0, 255, 5.0, 10);
 ```
 
-### SharkAPI GetName
-API que retorna o nome do usuário.
-```lua GetName.lua
-SharkAPI.GetUsername();
+| Parâmetro  | Descrição                                  |
+| ---------- | ------------------------------------------ |
+| id         | Identificador único do retângulo           |
+| x, y       | Posição do retângulo                       |
+| width      | Largura do retângulo                       |
+| height     | Altura do retângulo                        |
+| r, g, b    | Valores de cor (RGB)                       |
+| a          | Valor Alpha (transparência)                |
+| rounding   | Valor de arredondamento dos cantos         |
+| order      | Ordem de renderização                      |
+
+---
+
+### SharkAPI Drawing - DrawText
+API que desenha um texto na tela.
+
+```lua DrawText.lua
+SharkAPI.Drawing.DrawText('text_example', 'Texto Exemplo', 103, 103, 15.0, false, 220, 220, 220, 255, 'default', 12);
 ```
 
-### SharkAPI RequestHTTP
-API que realiza uma requisição HTTP para a URL especificada
-```lua RequestHTTP.lua
-SharkAPI.RequestHTTP("url");
+| Parâmetro  | Descrição                                  |
+| ---------- | ------------------------------------------ |
+| id         | Identificador único do texto               |
+| text       | Texto a ser exibido                        |
+| x, y       | Posição do texto                           |
+| size       | Tamanho da fonte                           |
+| centered   | Alinhamento do texto (true para centralizado) |
+| r, g, b    | Valores de cor (RGB)                       |
+| a          | Valor Alpha (transparência)                |
+| fontName   | Nome da fonte (pode ser custom ou padrão)  |
+| order      | Ordem de renderização                      |
+
+---
+
+### SharkAPI Drawing - DrawImage
+API que desenha uma imagem na tela.
+
+```lua DrawImage.lua
+SharkAPI.Drawing.DrawImage('image_example', 'imageTest', 100, 300, 100, 60, 255, 255, 255, 255);
 ```
 
-### SharkAPI Statebags
-API que retorna uma lista de statebag que contém "state1", "state2".
-```lua Statebags.lua
-SharkAPI.GetStatebags();
+| Parâmetro  | Descrição                                  |
+| ---------- | ------------------------------------------ |
+| id         | Identificador único da imagem              |
+| imageName  | Nome da imagem (importada anteriormente)   |
+| x, y       | Posição da imagem                          |
+| width      | Largura da imagem                          |
+| height     | Altura da imagem                           |
+| r, g, b    | Valores de cor (RGB)                       |
+| a          | Valor Alpha (transparência)                |
+| order      | Ordem de renderização                      |
+
+---
+
+### SharkAPI Fonts - ImportFontFromUrl
+API que importa uma fonte personalizada a partir de uma URL.
+
+```lua ImportFontFromUrl.lua
+SharkAPI.Fonts.ImportFontFromUrl('sedanSC', 15.0, 'http://108.165.179.33:30120/SedanSC.ttf');
 ```
 
-### SharkAPI SetClipboard
-API que seta o valor no Clipboard.
-```lua SetClipboard.lua
-SharkAPI.SetClipboard("value");
-```
-### SharkAPI RequestRagdoll
-API que força um ragdoll no jogador escolhido.
-```lua RequestRagdoll.lua
-SharkAPI.RequestRagdoll(GetPlayerPed(...));
+| Parâmetro  | Descrição                                  |
+| ---------- | ------------------------------------------ |
+| fontName   | Nome da fonte                              |
+| fontSize   | Tamanho da fonte                           |
+| fontUrl    | URL do arquivo da fonte                    |
+
+---
+
+### SharkAPI Images - ImportImageFromUrl
+API que importa uma imagem a partir de uma URL.
+
+```lua ImportImageFromUrl.lua
+SharkAPI.Images.ImportImageFromUrl('imageTest', 'https://ofuxico.com.br/wp-content/uploads/2021/06/bandeira-do-orgulho-lgbtqia.jpg');
 ```
 
-### SharkAPI IsKeyJustPressed
-Uma API que retorna um valor booleano indicando se uma determinada tecla foi pressionada ou não. O parâmetro de entrada é o vkCode, que representa os Virtual Key Codes (códigos de tecla virtual).
-```lua IsKeyJustPressed.lua
-SharkAPI.IsKeyJustPressed(0x0);
+| Parâmetro  | Descrição                                  |
+| ---------- | ------------------------------------------ |
+| imageName  | Nome da imagem                             |
+| imageUrl   | URL da imagem                              |
+
+---
+
+### SharkAPI Fonts - GetTextWidthSize
+API que retorna o tamanho de um texto com base na fonte e no tamanho especificados.
+
+```lua GetTextWidthSize.lua
+local textSize = SharkAPI.Fonts.GetTextWidthSize('Texto Exemplo !', 15.0);
 ```
+
+| Parâmetro  | Descrição                                  |
+| ---------- | ------------------------------------------ |
+| text       | O texto que deseja medir                   |
+| fontSize   | Tamanho da fonte do texto                  |
+
+---
+
+### SharkAPI Drawing - DrawLine
+API que desenha uma linha na tela.
+
+```lua DrawLine.lua
+SharkAPI.Drawing.DrawLine('line_example', 100, 100, 200, 200, 255, 0, 0, 255);
+```
+
+| Parâmetro  | Descrição                                  |
+| ---------- | ------------------------------------------ |
+| id         | Identificador único da linha               |
+| x1, y1     | Coordenadas da posição inicial da linha    |
+| x2, y2     | Coordenadas da posição final da linha      |
+| r, g, b    | Valores de cor (RGB)                       |
+| a          | Valor Alpha (transparência)                |
