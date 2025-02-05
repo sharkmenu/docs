@@ -2,8 +2,8 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Shark API",
   "logo": {
-    "dark": "",
-    "light": ""
+    "dark": "https://snakefivem.online/public/darkmacaco2.png",
+    "light": "https://snakefivem.online/public/darkmacaco2.png"
   },
   "favicon": "",
   "colors": {
