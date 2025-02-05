@@ -21,7 +21,7 @@ Parâmetros:
 |-----------|----------------------------------------------|
 | resource  | Nome do resource onde o código será injetado|
 
-#### Retorno:
+Retorno:
 - **Sucesso:** `nil`
 - **Erro:** Mensagem de erro em caso de falha.
 
@@ -34,7 +34,7 @@ API que retorna o nome do usuário.
 local username = SharkAPI.GetUsername();
 ```
 
-#### Retorno:
+Retorno:
 - **string:** Nome do usuário.
 
 ---
@@ -46,13 +46,13 @@ API que realiza uma requisição HTTP para a URL especificada.
 SharkAPI.RequestHTTP("url");
 ```
 
-#### Parâmetros:
+Parâmetros:
 
 | Parâmetro | Descrição                                   |
 |-----------|---------------------------------------------|
 | url       | URL para a qual a requisição será feita.   |
 
-#### Retorno:
+Retorno:
 - **table:** Resposta da requisição.
 
 ---
@@ -63,7 +63,7 @@ API que retorna todas as resources que foram carregadas.
 SharkAPI.GetLoadedResources();
 ```
 
-#### Retorno:
+Retorno:
 - **table:** Lista de resources carregadas. Cada resource é representada como uma string com o nome da resource.
 
 ---
@@ -74,7 +74,7 @@ API que retorna uma lista de statebag que contém "state1", "state2".
 local statebags = SharkAPI.GetStatebags();
 ```
 
-#### Retorno:
+Retorno:
 - **table:** Lista de statebags.
 
 ---
@@ -86,13 +86,13 @@ API que seta o valor no Clipboard.
 SharkAPI.SetClipboard("value");
 ```
 
-#### Parâmetros:
+Parâmetros:
 
 | Parâmetro | Descrição                                  |
 |-----------|--------------------------------------------|
 | value     | Valor a ser copiado para o clipboard.     |
 
-#### Retorno:
+Retorno:
 - **Sucesso:** `nil`
 - **Erro:** Mensagem de erro em caso de falha.
 
@@ -105,13 +105,13 @@ API que força um ragdoll no jogador escolhido.
 SharkAPI.RequestRagdoll(GetPlayerPed(...));
 ```
 
-#### Parâmetros:
+Parâmetros:
 
 | Parâmetro | Descrição                                  |
 |-----------|--------------------------------------------|
 | player    | ID do jogador que receberá o ragdoll.     |
 
-#### Retorno:
+Retorno:
 - **Sucesso:** `nil`
 - **Erro:** Mensagem de erro em caso de falha.
 
@@ -124,13 +124,13 @@ API que retorna um valor booleano indicando se uma tecla foi pressionada.
 local isPressed = SharkAPI.IsKeyJustPressed(0x0);
 ```
 
-#### Parâmetros:
+Parâmetros:
 
 | Parâmetro | Descrição                                  |
 |-----------|--------------------------------------------|
 | vkCode    | Código da tecla virtual.                   |
 
-#### Códigos de Tecla Virtual:
+Códigos de Tecla Virtual:
 | Código (Hex) | Tecla                           |
 |--------------|---------------------------------|
 | 0x08        | Backspace                       |
@@ -175,6 +175,72 @@ local isPressed = SharkAPI.IsKeyJustPressed(0x0);
 | 0x59        | Y                               |
 | 0x5A        | Z                               |
 
-#### Retorno:
+Retorno:
 - **boolean:** `true` se a tecla foi pressionada, caso contrário `false`.
 
+### SharkAPI SetVar
+API que define um valor para uma variável identificada por um ID.
+
+```lua SetVar.lua
+SharkAPI.SetVar('example_id', 42);
+```
+
+Parâmetros:
+
+| Parâmetro | Descrição                        |
+|-----------|----------------------------------|
+| id        | Identificador da variável       |
+| value     | Valor a ser atribuído           |
+
+Retorno:
+- **Sucesso:** `nil`
+- **Erro:** Mensagem de erro em caso de falha.
+
+---
+
+### SharkAPI GetVar
+API que obtém o valor de uma variável previamente definida.
+
+```lua GetVar.lua
+local value = SharkAPI.GetVar('example_id');
+```
+
+Parâmetros:
+
+| Parâmetro | Descrição                        |
+|-----------|----------------------------------|
+| id        | Identificador da variável       |
+
+Retorno:
+- **any:** Valor armazenado na variável.
+
+---
+
+### SharkAPI StopResource
+API que interrompe um resource em execução.
+
+```lua StopResource.lua
+SharkAPI.StopResource('resource_name');
+```
+
+Parâmetros:
+
+| Parâmetro    | Descrição                            |
+|-------------|------------------------------------|
+| resourceName | Nome do resource a ser interrompido |
+
+Retorno:
+- **Sucesso:** `nil`
+- **Erro:** Mensagem de erro em caso de falha.
+
+---
+
+### SharkAPI GetSubscription
+API que retorna a data de expiração da assinatura.
+
+```lua GetSubscription.lua
+local subscriptionDate = SharkAPI.GetSubscription();
+```
+
+Retorno:
+- **string:** Data de expiração da assinatura (exemplo: "12/12/2038").
