@@ -1,9 +1,9 @@
+```markdown
 ---
 title: Shark API's Drawing  
 description: 'Esta documentação detalha as APIs de desenho disponíveis no Executor do Shark.'  
 icon: 'draw-square'
 ---
-
 
 ### SharkAPI Drawing - DrawRect
 API que desenha um retângulo na tela.
@@ -123,3 +123,115 @@ SharkAPI.Drawing.DrawLine('line_example', 100, 100, 200, 200, 255, 0, 0, 255);
 | x2, y2     | Coordenadas da posição final da linha      |
 | r, g, b    | Valores de cor (RGB)                       |
 | a          | Valor Alpha (transparência)                |
+
+---
+
+### SharkAPI Drawing - DrawCircle
+API que desenha um círculo na tela.
+
+```lua DrawCircle.lua
+SharkAPI.Drawing.DrawCircle('circle_example', 150, 150, 50, 32, 2.0, 255, 0, 0, 255, false);
+```
+
+| Parâmetro  | Descrição                                  |
+| ---------- | ------------------------------------------ |
+| id         | Identificador único do círculo             |
+| x, y       | Posição do círculo                         |
+| radius     | Raio do círculo                            |
+| segments   | Número de segmentos do círculo             |
+| thickness  | Espessura da linha do círculo              |
+| r, g, b    | Valores de cor (RGB)                       |
+| a          | Valor Alpha (transparência)                |
+| filled     | Se o círculo deve ser preenchido (true/false) |
+
+---
+
+### SharkAPI Drawing - DrawLine (com espessura)
+API que desenha uma linha na tela com espessura personalizada.
+
+```lua DrawLineThickness.lua
+SharkAPI.Drawing.DrawLine('line_thickness_example', 100, 100, 200, 200, 255, 0, 0, 255, 5.0);
+```
+
+| Parâmetro  | Descrição                                  |
+| ---------- | ------------------------------------------ |
+| id         | Identificador único da linha               |
+| x1, y1     | Coordenadas da posição inicial da linha    |
+| x2, y2     | Coordenadas da posição final da linha      |
+| r, g, b    | Valores de cor (RGB)                       |
+| a          | Valor Alpha (transparência)                |
+| thickness  | Espessura da linha                         |
+
+---
+
+### SharkAPI Drawing - PushClipRect
+API que define uma área de recorte para o desenho.
+
+```lua PushClipRect.lua
+SharkAPI.Drawing.PushClipRect('clip_rect_example', 100, 100, 200, 200, 10);
+```
+
+| Parâmetro  | Descrição                                  |
+| ---------- | ------------------------------------------ |
+| id         | Identificador único da área de recorte     |
+| x, y       | Posição da área de recorte                 |
+| w, h       | Largura e altura da área de recorte        |
+| order      | Ordem de renderização                      |
+
+---
+
+### SharkAPI Drawing - PopClipRect
+API que remove a área de recorte anteriormente definida.
+
+```lua PopClipRect.lua
+SharkAPI.Drawing.PopClipRect('clip_rect_example', 10);
+```
+
+| Parâmetro  | Descrição                                  |
+| ---------- | ------------------------------------------ |
+| id         | Identificador único da área de recorte     |
+| order      | Ordem de renderização                      |
+
+---
+
+### SharkAPI Drawing - DrawShadowRect
+API que desenha um retângulo com sombra.
+
+```lua DrawShadowRect.lua
+SharkAPI.Drawing.DrawShadowRect('shadow_rect_example', 100, 100, 150, 150, 255, 0, 0, 255, 10.0, 5.0, 10);
+```
+
+| Parâmetro  | Descrição                                  |
+| ---------- | ------------------------------------------ |
+| id         | Identificador único do retângulo com sombra|
+| x, y       | Posição do retângulo                       |
+| width      | Largura do retângulo                       |
+| height     | Altura do retângulo                        |
+| r, g, b    | Valores de cor (RGB)                       |
+| a          | Valor Alpha (transparência)                |
+| shadowThickness | Espessura da sombra                    |
+| rounding   | Valor de arredondamento dos cantos         |
+| order      | Ordem de renderização                      |
+
+---
+
+### SharkAPI Drawing - DrawGradientRect
+API que desenha um retângulo com gradiente.
+
+```lua DrawGradientRect.lua
+SharkAPI.Drawing.DrawGradientRect('gradient_rect_example', 100, 100, 150, 150, 255, 0, 0, 255, 0, 0, 255, 255, 5.0, 10);
+```
+
+| Parâmetro  | Descrição                                  |
+| ---------- | ------------------------------------------ |
+| id         | Identificador único do retângulo com gradiente |
+| x, y       | Posição do retângulo                       |
+| width      | Largura do retângulo                       |
+| height     | Altura do retângulo                        |
+| r1, g1, b1 | Valores de cor (RGB) do início do gradiente|
+| a1         | Valor Alpha (transparência) do início do gradiente |
+| r2, g2, b2 | Valores de cor (RGB) do fim do gradiente   |
+| a2         | Valor Alpha (transparência) do fim do gradiente |
+| rounding   | Valor de arredondamento dos cantos         |
+| order      | Ordem de renderização                      |
+```
